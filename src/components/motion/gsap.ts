@@ -1,0 +1,12 @@
+/* One place to import GSAP from, with the plugins registered (browser only). */
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+
+export const REDUCED = '(prefers-reduced-motion: reduce)';
+export const MOTION_OK = '(prefers-reduced-motion: no-preference)';
+
+export { gsap, ScrollTrigger, SplitText, useGSAP };
